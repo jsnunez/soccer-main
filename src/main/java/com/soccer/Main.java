@@ -45,6 +45,14 @@ public class Main {
             // System.out.println(equipo.getNombre());
             // System.out.println(equipo.getLstJugadores().get(0).getNombre());
 
+
+            System.out.println("######  #######    #    ####### ######  #          #    #     # ");
+            System.out.println("#     # #         # #      #    #     # #         # #    #   #  ");
+            System.out.println("#     # #        #   #     #    #     # #        #   #    # #   ");
+            System.out.println("######  #####   #     #    #    ######  #       #     #    #    ");
+            System.out.println("#     # #       #######    #    #       #       #######    #    ");
+            System.out.println("#     # #       #     #    #    #       #       #     #    #    ");
+            System.out.println("######  ####### #     #    #    #       ####### #     #    #    ");
         while (true) {
             System.out.println("1. Equipos");
             System.out.println("2. Jugadores");
@@ -76,6 +84,17 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Cerrando el programa");
+         
+                for (int i = 0; i < 40; i++) {
+                    System.out.print(".");
+                    try {
+                        Thread.sleep(5 * 5);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+                
                     sc.close();
                     System.exit(0);
                     break;

@@ -20,11 +20,11 @@ public class viewTeam {
         int verificar = 1;
         while (verificar == 1) {
             System.out.println("1. Crear Equipo");
-            System.out.println("2. Actualizar Equipo");
+            System.out.println("2. Actualizar Integrantes del equipo");
             System.out.println("3. Buscar Equipo");
             System.out.println("4. Eliminar Equipo");
             System.out.println("5. Listar todos Equipos");
-            System.out.println("6. Listar todos Jugadores del equipo");
+            System.out.println("6. Listar todos integrantes del equipo");
             System.out.println("7. Salir");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -213,8 +213,28 @@ public class viewTeam {
 
                 case 6:
 Team equipoJugadores = new Team();
-equipoJugadores = controlador.equipos.get("001");
+
+System.out.println("Ingrese codigo del equipo :");
+codigoEquipo = scanner.nextLine();
+equipoJugadores = controlador.equipos.get(codigoEquipo);
+
+System.out.println("Jugadores del equipo");
                 for (Player n : equipoJugadores.getLstJugadores()) {
+                    System.out.println("+---------------------+");
+                    System.out.println("Nombre: " + n.getNombre());
+                    System.out.println("Edad: " + n.getEdad());
+                    System.out.println("+---------------------+");
+                }
+                System.out.println("Entrenadores del equipo");
+                for (Coach n : equipoJugadores.getLstEntrenadores()) {
+                    System.out.println("+---------------------+");
+                    System.out.println("Nombre: " + n.getNombre());
+                    System.out.println("Edad: " + n.getEdad());
+                    System.out.println("+---------------------+");
+                }
+
+                System.out.println("Masajistas del equipo");
+                for (Doctor n : equipoJugadores.getLstMasajistas()) {
                     System.out.println("+---------------------+");
                     System.out.println("Nombre: " + n.getNombre());
                     System.out.println("Edad: " + n.getEdad());
